@@ -10,7 +10,8 @@
 
 body {
   font-family: "Inter", Arial, sans-serif;
-  background: #0d0d0d;
+  background: url("images/pigdog-bg.png") no-repeat center center fixed;
+  background-size: cover;
   color: #ffffff;
   overflow-x: hidden;
 }
@@ -345,3 +346,4 @@ h1 {
   font-size: 14px;
   color: #888;
 }
+
