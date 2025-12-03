@@ -1,0 +1,347 @@
+/* ------------------------------
+   GLOBAL STYLES
+------------------------------ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+  background: #0d0d0d;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Noise overlay for gritty meme vibe */
+.noise {
+  pointer-events: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.08;
+  z-index: 999;
+}
+
+/* ------------------------------
+   NAVIGATION BAR
+------------------------------ */
+
+.nav {
+  width: 100%;
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(8px);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.logo span {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #ccc;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+/* ------------------------------
+   HERO SECTION
+------------------------------ */
+
+.hero {
+  padding: 160px 20px 120px;
+  position: relative;
+}
+
+.hero-inner {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.hero-text {
+  max-width: 550px;
+}
+
+.pre {
+  font-size: 14px;
+  color: #ff71ce;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 64px;
+  line-height: 1;
+  margin-bottom: 10px;
+  font-weight: 900;
+}
+
+.tagline {
+  display: block;
+  font-size: 20px;
+  margin-top: 5px;
+  color: #bbbbbb;
+}
+
+.hero-desc {
+  margin: 20px 0;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #dddddd;
+}
+
+/* Buttons */
+.btn {
+  padding: 14px 26px;
+  border-radius: 10px;
+  font-weight: 600;
+  display: inline-block;
+  text-decoration: none;
+  margin-right: 12px;
+  transition: 0.25s;
+}
+
+.btn.primary {
+  background: #ff006f;
+  color: #fff;
+  box-shadow: 0 0 18px rgba(255, 0, 111, 0.4);
+}
+
+.btn.primary:hover {
+  background: #ff3d8e;
+}
+
+.btn.ghost {
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.btn.ghost:hover {
+  background: #ffffff15;
+}
+
+/* Info Pills */
+.info-row {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.pill {
+  padding: 8px 16px;
+  background: #1a1a1a;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.label {
+  display: block;
+  font-size: 12px;
+  color: #888;
+}
+
+.value {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.value.live {
+  color: #00ff8f;
+}
+
+/* Contract Box */
+.contract-box {
+  margin-top: 25px;
+  background: #111;
+  padding: 12px 16px;
+  border-left: 4px solid #ff006f;
+  border-radius: 6px;
+}
+
+.contract-box code {
+  font-size: 14px;
+  color: #bbb;
+}
+
+/* ------------------------------
+   HERO ART
+------------------------------ */
+
+.hero-art {
+  position: relative;
+}
+
+.coin-orbit {
+  position: relative;
+  width: 350px;
+  height: 350px;
+}
+
+.coin {
+  width: 100%;
+  animation: spinCoin 12s linear infinite;
+  filter: drop-shadow(0 0 15px rgba(255, 0, 100, 0.5));
+}
+
+@keyframes spinCoin {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.02); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+.hero-caption {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 16px;
+  color: #aaa;
+}
+
+/* ------------------------------
+   SECTIONS
+------------------------------ */
+
+.section {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section h2 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.section-desc {
+  font-size: 18px;
+  color: #cccccc;
+  margin-bottom: 40px;
+}
+
+/* Cards */
+.grid-3, .grid-4 {
+  display: grid;
+  gap: 25px;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.grid-4 {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.card, .pill-card {
+  background: #151515;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #222;
+  transition: 0.3s;
+}
+
+.card:hover, .pill-card:hover {
+  border-color: #ff006f;
+  transform: translateY(-3px);
+}
+
+.pill-card .pill-label {
+  font-size: 12px;
+  color: #999;
+}
+
+.pill-card .pill-value {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Alt background */
+.section-alt {
+  background: #111;
+}
+
+/* How to Buy Steps */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.step {
+  background: #151515;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #222;
+}
+
+.step-num {
+  background: #ff006f;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+/* Community */
+.social-row {
+  margin-top: 30px;
+}
+
+.btn.social {
+  background: #232323;
+  padding: 12px 22px;
+  margin-right: 12px;
+}
+
+.btn.social:hover {
+  background: #333;
+}
+
+/* Footer */
+.footer {
+  padding: 40px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #888;
+}
